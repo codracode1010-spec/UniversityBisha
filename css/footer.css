@@ -158,35 +158,56 @@ footer {
   color: var(--text-light);
 }
 
+/* Accreditation & Government Badges */
+.loa {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.loa img {
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.loa img:first-child {
+  width: 110px;
+}
+
+.loa img:last-child {
+  width: 220px;
+  max-width: 100%;
+}
+
 /* Responsive Footer */
 @media (max-width: 992px) {
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
   }
 }
 
 @media (max-width: 576px) {
+  footer {
+    padding-top: 50px;
+  }
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 25px;
   }
   .footer-bottom-inner {
     flex-direction: column;
     text-align: center;
+    gap: 12px;
+  }
+  .loa {
+    gap: 15px;
+  }
+  .loa img:last-child {
+    width: 180px;
   }
 }
-.loa{
-    display: flex;
-    align-items: flex-end;
-    gap: 30px;
-    
-}
 
-.loa img:first-child{
-    width: 120px; 
-      /* شعار الاعتماد */
-}
-
-.loa img:last-child{
-    width: 260px;  
-     /* بطاقة هيئة الحكومة الرقمية */
-}

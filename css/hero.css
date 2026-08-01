@@ -155,18 +155,45 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .hero {
-    min-height: 70vh;
-    padding: 60px 0 100px;
+    min-height: 75vh;
+    padding: 70px 0 120px;
   }
   .hero-content h1 {
-    font-size: 2.3rem;
+    font-size: clamp(2.1rem, 4.5vw, 3.2rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 65vh;
+    padding: 50px 0 100px;
+  }
+  .hero-content h1 {
+    font-size: 2.1rem;
+    margin-bottom: 16px;
   }
   .hero-content p {
     font-size: 1.05rem;
+    margin-bottom: 30px;
   }
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
   .quick-access-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .quick-card {
+    padding: 18px 15px;
   }
 }

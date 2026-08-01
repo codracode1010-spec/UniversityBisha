@@ -36,8 +36,9 @@
   --radius-lg: 20px;
   --radius-full: 9999px;
   
-  /* Typography */
+  /* Typography & Font Scaling */
   --font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-scale: 1;
   
   /* Transitions */
   --transition-fast: 0.2s ease;
@@ -52,3 +53,29 @@
   --z-header: 1000;
   --z-modal: 2000;
 }
+
+/* Dark Mode Variables Theme */
+[data-theme="dark"] {
+  --text-dark: #f1f5f9;
+  --text-body: #cbd5e1;
+  --text-muted: #94a3b8;
+  
+  --bg-main: #0f172a;
+  --bg-alt: #0b1324;
+  --bg-card: #1e293b;
+  --bg-overlay: rgba(2, 6, 23, 0.85);
+  
+  --primary-light: #163d2f;
+  --border-color: #334155;
+  --border-light: #1e293b;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.5);
+  --shadow-hover: 0 15px 35px rgba(11, 122, 83, 0.3);
+}
+
+/* Base Font Scale multiplier applying to html element */
+html {
+  font-size: calc(16px * var(--font-scale, 1));
+}
+

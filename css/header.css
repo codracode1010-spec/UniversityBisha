@@ -1,5 +1,3 @@
-
-
 header {
   width: 100%;
   position: fixed;
@@ -39,6 +37,7 @@ header {
 
 .logo img {
   height: 62px;
+  margin-left: 10px;
   width: auto;
   object-fit: contain;
   transition: var(--transition-normal);
@@ -67,7 +66,7 @@ header {
 }
 
 .navbar > ul > li > a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   right: 0;
@@ -233,6 +232,139 @@ header {
   color: var(--primary);
 }
 
+/* Settings Toggle Button */
+.settings-toggle-btn {
+  background-color: var(--border-light);
+  color: var(--text-dark);
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: var(--transition-normal);
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+}
+
+.settings-toggle-btn:hover {
+  background-color: var(--primary);
+  color: var(--text-light);
+  border-color: var(--primary);
+}
+
+/* Settings Panel Dropdown */
+.settings-panel {
+  position: fixed;
+  top: 95px;
+  left: 20px;
+  width: 320px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  z-index: var(--z-modal);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: var(--transition-smooth);
+}
+
+.settings-panel.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.settings-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1rem;
+  border-top-left-radius: var(--radius-md);
+  border-top-right-radius: var(--radius-md);
+}
+
+.settings-panel-close {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.settings-panel-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.setting-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.setting-btn {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 600;
+  border: 1px solid var(--primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition-fast);
+}
+
+.setting-btn:hover {
+  background-color: var(--primary);
+  color: var(--text-light);
+}
+
+.font-size-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.font-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.font-btn:hover,
+.font-btn.active {
+  background-color: var(--primary);
+  color: var(--text-light);
+  border-color: var(--primary);
+}
+
 /* Mobile Toggle Hamburger Button */
 .mobile-toggle {
   display: none;
@@ -244,20 +376,22 @@ header {
   background-color: var(--border-light);
   align-items: center;
   justify-content: center;
+  border: 1px solid var(--border-color);
 }
 
 /* Mobile Navigation Side Drawer */
 .mobile-drawer {
   position: fixed;
   top: 0;
-  right: -320px;
-  width: 300px;
+  right: -360px;
+  width: 340px;
+  max-width: 88vw;
   height: 100vh;
   background-color: var(--bg-main);
   box-shadow: var(--shadow-lg);
   z-index: var(--z-modal);
-  transition: right 0.35s ease;
-  padding: 25px 20px;
+  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 20px 18px;
   overflow-y: auto;
 }
 
@@ -269,9 +403,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
   border-bottom: 1px solid var(--border-color);
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .mobile-drawer-close {
@@ -286,21 +420,157 @@ header {
   justify-content: center;
 }
 
-.mobile-nav-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.mobile-nav-list a {
+/* Mobile Drawer Settings Toolbar */
+.mobile-drawer-settings {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.05rem;
-  font-weight: 600;
+  background-color: var(--primary-light);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 18px;
+}
+
+.mobile-setting-chip {
+  background-color: var(--bg-main);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.mobile-font-chips {
+  display: flex;
+  gap: 5px;
+}
+
+.font-chip {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-main);
   color: var(--text-dark);
-  padding: 10px 5px;
-  border-bottom: 1px dashed var(--border-light);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.font-chip.active {
+  background-color: var(--primary);
+  color: var(--text-light);
+  border-color: var(--primary);
+}
+
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Accordions for Mobile Drawer */
+.mobile-accordion-item {
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.mobile-accordion-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 6px;
+  background: none;
+  border: none;
+  color: var(--text-dark);
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mobile-accordion-header i {
+  font-size: 0.85rem;
+  transition: transform var(--transition-normal);
+  color: var(--primary);
+}
+
+.mobile-accordion-item.active .mobile-accordion-header i {
+  transform: rotate(180deg);
+}
+
+.mobile-accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.4s ease,
+    padding 0.3s ease;
+  padding: 0 10px;
+  background-color: var(--bg-alt);
+  border-radius: var(--radius-sm);
+}
+
+.mobile-accordion-item.active .mobile-accordion-body {
+  max-height: 1000px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+}
+
+.mobile-col {
+  margin-bottom: 12px;
+}
+
+.mobile-col:last-child {
+  margin-bottom: 0;
+}
+
+.mobile-col h4 {
+  color: var(--primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-col a {
+  display: block !important;
+  color: var(--text-body) !important;
+  font-size: 0.9rem !important;
+  padding: 5px 0 !important;
+  font-weight: 500 !important;
+  border: none !important;
+}
+
+.mobile-col a:hover {
+  color: var(--primary) !important;
+  transform: translateX(-4px);
+}
+
+.mobile-direct-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 6px;
+  color: var(--text-dark);
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.mobile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.w-100 {
+  width: 100%;
 }
 
 .mobile-overlay {
@@ -321,18 +591,18 @@ header {
   visibility: visible;
 }
 
-/* Responsive Media Queries */
+/* Responsive Media Queries for Desktop, Tablets & iPads */
 @media (max-width: 1100px) {
   .mega-menu {
     width: 700px;
     right: -100px;
   }
   .navbar > ul {
-    gap: 18px;
+    gap: 16px;
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .navbar {
     display: none;
   }
@@ -346,9 +616,15 @@ header {
     height: 75px;
   }
   .logo img {
-    height: 48px;
+    height: 44px;
   }
   .myub-btn span {
     display: none;
+  }
+  .settings-panel {
+    top: 80px;
+    left: 10px;
+    right: 10px;
+    width: auto;
   }
 }

@@ -176,7 +176,7 @@
               </ul>
             </nav>
 
-            <!-- 3. Left: Action Buttons -->
+            <!-- 3. Left: Action Buttons & Settings -->
             <div class="left-side">
               <a href="#" class="myub-btn">
                 <i class="fa-solid fa-user-shield"></i>
@@ -186,6 +186,10 @@
                 <i class="fa-solid fa-globe"></i>
                 <span>English</span>
               </a>
+              <!-- Site Accessibility & Theme Controls Toggle -->
+              <button class="settings-toggle-btn" id="settingsToggleBtn" aria-label="إعدادات المظهر والخط" title="إعدادات المظهر وسهولة الاستخدام">
+                <i class="fa-solid fa-sliders"></i>
+              </button>
               <button class="mobile-toggle" aria-label="افتح القائمة">
                 <i class="fa-solid fa-bars"></i>
               </button>
@@ -194,35 +198,200 @@
         </div>
       </div>
 
+      <!-- Quick Accessibility & Display Settings Bar Dropdown / Modal -->
+      <div class="settings-panel" id="settingsPanel">
+        <div class="settings-panel-header">
+          <span><i class="fa-solid fa-sliders"></i> إعدادات العرض والسهولة</span>
+          <button class="settings-panel-close" id="settingsPanelClose" aria-label="إغلاق الإعدادات">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="settings-panel-body">
+          <!-- Dark / Light Mode Toggle -->
+          <div class="setting-item">
+            <span class="setting-label"><i class="fa-solid fa-moon"></i> المظهر الداكن:</span>
+            <button class="setting-btn theme-toggle-btn" id="themeToggleBtn">
+              <i class="fa-solid fa-moon"></i>
+              <span id="themeToggleText">تفعيل الوضع الداكن</span>
+            </button>
+          </div>
+          <!-- Font Size Scaling Control -->
+          <div class="setting-item">
+            <span class="setting-label"><i class="fa-solid fa-font"></i> حجم الخط:</span>
+            <div class="font-size-controls">
+              <button class="font-btn" id="fontDecrease" title="تصغير الخط">A-</button>
+              <button class="font-btn active" id="fontReset" title="الخط الافتراضي">A</button>
+              <button class="font-btn" id="fontIncrease" title="تكبير الخط">A+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Mobile Navigation Drawer -->
       <div class="mobile-drawer">
         <div class="mobile-drawer-header">
-          <img src="UBlogo/UBLogo.gif" alt="جامعة بيشة" style="height: 40px" />
+          <img src="UBlogo/UBLogo.gif" alt="جامعة بيشة" style="height: 42px" />
           <button class="mobile-drawer-close" aria-label="إغلاق القائمة">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
+
+        <!-- Mobile Drawer Quick Actions / Settings Toolbar -->
+        <div class="mobile-drawer-settings">
+          <button class="mobile-setting-chip theme-toggle-btn-mobile">
+            <i class="fa-solid fa-moon"></i>
+            <span>الوضع الداكن</span>
+          </button>
+          <div class="mobile-font-chips">
+            <button class="font-chip" id="mobileFontDec">A-</button>
+            <button class="font-chip active" id="mobileFontReset">A</button>
+            <button class="font-chip" id="mobileFontInc">A+</button>
+          </div>
+        </div>
+
         <div class="mobile-nav-list">
-          <a href="#">الجامعة <i class="fa-solid fa-chevron-left"></i></a>
-          <a href="#">الكليات <i class="fa-solid fa-chevron-left"></i></a>
-          <a href="#"
-            >البحث والابتكار <i class="fa-solid fa-chevron-left"></i
-          ></a>
-          <a href="#"
-            >المراكز والمعاهد <i class="fa-solid fa-chevron-left"></i
-          ></a>
-          <a href="#"
-            >القبول والتسجيل <i class="fa-solid fa-chevron-left"></i
-          ></a>
-          <a href="#"
-            >التقويم الأكاديمي <i class="fa-solid fa-chevron-left"></i
-          ></a>
-          <a
-            href="#"
-            class="btn btn-primary"
-            style="margin-top: 15px; text-align: center"
-            >دخول MyUB</a
-          >
+          <!-- Accordion 1: الجامعة -->
+          <div class="mobile-accordion-item">
+            <button class="mobile-accordion-header">
+              <span>الجامعة</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="mobile-accordion-body">
+              <div class="mobile-col">
+                <h4>عن الجامعة</h4>
+                <a href="https://www.ub.edu.sa/ar/Pages/AboutUniversity.aspx">نبذة عن الجامعة</a>
+                <a href="#">رؤية ورسالة الجامعة</a>
+                <a href="https://www.ub.edu.sa/ar/Pages/President.aspx">رئيس الجامعة</a>
+                <a href="https://www.ub.edu.sa/ar/Pages/Cooperation-agreements.aspx">اتفاقيات التعاون الدولي</a>
+                <a href="#">الإطار الأخلاقي والسياسات</a>
+                <a href="#">التقارير والإنجازات السنوية</a>
+              </div>
+              <div class="mobile-col">
+                <h4>القيادات والقطاعات</h4>
+                <a href="#">وكالات الجامعة</a>
+                <a href="#">العمادات المساندة</a>
+                <a href="#">الإدارات والمراكز</a>
+                <a href="#">مجلس الجامعة</a>
+              </div>
+              <div class="mobile-col">
+                <h4>اللوائح والخدمات</h4>
+                <a href="#">دليل اللوائح والأنظمة</a>
+                <a href="#">منصة التميّز الأكاديمي</a>
+                <a href="#">الخدمات الإلكترونية الموحدة</a>
+                <a href="#">دليل التواصل والدعم</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion 2: الكليات -->
+          <div class="mobile-accordion-item">
+            <button class="mobile-accordion-header">
+              <span>الكليات</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="mobile-accordion-body">
+              <div class="mobile-col">
+                <h4>الكليات الصحية والعلمية</h4>
+                <a href="#">كلية الادب والفنون</a>
+                <a href="#">كلية العلوم</a>
+                <a href="#">كلية الطب</a>
+                <a href="#">كلية العلوم التطبيقية بالنماص</a>
+              </div>
+              <div class="mobile-col">
+                <h4>الكليات الإنسانية والأعمال</h4>
+                <a href="#">كلية إدارة الأعمال</a>
+                <a href="#">كلية الهندسة</a>
+                <a href="#">كلية التربية والتنمية البشرية</a>
+                <a href="#">الكلية التطبيقية ببلقرن</a>
+              </div>
+              <div class="mobile-col">
+                <h4>كليات العلوم والتقنية</h4>
+                <a href="#">كلية العلوم الطبية التطبيقية</a>
+                <a href="#">الكلية التطبيقية</a>
+                <a href="#">كلية الحاسبات وتقنية المعلومات</a>
+                <a href="#">الكلية التطبيقية بالنماص</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion 3: البحث والابتكار -->
+          <div class="mobile-accordion-item">
+            <button class="mobile-accordion-header">
+              <span>البحث والابتكار</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="mobile-accordion-body">
+              <div class="mobile-col">
+                <h4>المراكز</h4>
+                <a href="#">مركز الابتكار وريادة الاعمال</a>
+              </div>
+              <div class="mobile-col">
+                <h4>المجلات العلمية</h4>
+                <a href="#">مجلة جامعة بيشة للعلوم الانسانية</a>
+                <a href="#">مجلة جامعة بيشة للعلوم التربوية</a>
+                <a href="#">مجلة جامعة بيشة للعوم الاساسية والتطبيقية</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion 4: المراكز والمعاهد -->
+          <div class="mobile-accordion-item">
+            <button class="mobile-accordion-header">
+              <span>المراكز والمعاهد</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="mobile-accordion-body">
+              <div class="mobile-col">
+                <h4>المراكز</h4>
+                <a href="#">المركز الاعلامي</a>
+                <a href="#">مركز الوثائق والمحفوظات</a>
+                <a href="#">مركز القياس والتقويم</a>
+                <a href="#">المركز الطبي</a>
+              </div>
+              <div class="mobile-col">
+                <h4>المعاهد</h4>
+                <a href="#">معهد البحوث والاستشارات</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion 5: القبول والتسجيل -->
+          <div class="mobile-accordion-item">
+            <button class="mobile-accordion-header">
+              <span>القبول والتسجيل</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="mobile-accordion-body">
+              <div class="mobile-col">
+                <h4>آلية وإرشادات القبول</h4>
+                <a href="#">قبول البكالوريوس</a>
+                <a href="#">قبول الدراسات العليا</a>
+                <a href="#">قبول الطلاب الدوليين</a>
+                <a href="#">قبول الدبلوم</a>
+              </div>
+              <div class="mobile-col">
+                <h4>خدمات القبول والتسجيل</h4>
+                <a href="#">بوابة القبول والتسجيل</a>
+                <a href="#">التحقق من الوثائق</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direct Link: التقويم الأكاديمي -->
+          <a href="https://www.ub.edu.sa/ar/Pages/AcademicCalendar.aspx" class="mobile-direct-link">
+            <span>التقويم الأكاديمي</span>
+            <i class="fa-solid fa-calendar-days"></i>
+          </a>
+
+          <!-- Mobile Action Buttons -->
+          <div class="mobile-actions">
+            <a href="#" class="btn btn-primary w-100">
+              <i class="fa-solid fa-user-shield"></i> دخول MyUB
+            </a>
+            <a href="#" class="btn btn-outline w-100">
+              <i class="fa-solid fa-globe"></i> English
+            </a>
+          </div>
         </div>
       </div>
       <div class="mobile-overlay"></div>
