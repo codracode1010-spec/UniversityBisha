@@ -1,0 +1,192 @@
+/* ==========================================================================
+   Footer Component
+   ========================================================================== */
+
+footer {
+  background-color: #0b1a14;
+  color: #94a3b8;
+  padding-top: 80px;
+  border-top: 4px solid var(--primary);
+  font-size: 0.95rem;
+}
+
+.footer-top {
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 40px;
+}
+
+/* Col 1: About */
+.footer-about {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-logo img {
+  height: 60px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+.footer-about p {
+  line-height: 1.8;
+  color: #cbd5e1;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: var(--transition-normal);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-icon:hover {
+  background-color: var(--primary);
+  color: var(--text-light);
+  transform: translateY(-3px);
+  border-color: var(--primary);
+}
+
+/* Col 2 & 3: Links */
+.footer-col h3 {
+  color: var(--text-light);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 22px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-col h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 35px;
+  height: 3px;
+  background-color: var(--accent-gold);
+  border-radius: var(--radius-full);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a {
+  color: #94a3b8;
+  transition: var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-links a::before {
+  content: '\f104';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 0.75rem;
+  color: var(--primary);
+}
+
+.footer-links a:hover {
+  color: var(--text-light);
+  transform: translateX(-5px);
+}
+
+/* Col 4: Contact */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: #cbd5e1;
+}
+
+.contact-item i {
+  color: var(--accent-gold);
+  font-size: 1.1rem;
+  margin-top: 4px;
+}
+
+/* Footer Bottom Bar */
+.footer-bottom {
+  padding: 25px 0;
+  background-color: #07120e;
+  font-size: 0.9rem;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-bottom-links a:hover {
+  color: var(--text-light);
+}
+
+/* Responsive Footer */
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.loa{
+    display: flex;
+    align-items: flex-end;
+    gap: 30px;
+    
+}
+
+.loa img:first-child{
+    width: 120px; 
+      /* شعار الاعتماد */
+}
+
+.loa img:last-child{
+    width: 260px;  
+     /* بطاقة هيئة الحكومة الرقمية */
+}

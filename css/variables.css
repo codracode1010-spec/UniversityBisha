@@ -1,0 +1,54 @@
+:root {
+  /* Brand Colors - University of Bisha */
+  --primary: #0b7a53;
+  --primary-hover: #085e40;
+  --primary-light: #e8f5f0;
+  --secondary: #178d59;
+  --secondary-hover: #126d45;
+  --accent-gold: #c59b27;
+  --accent-gold-light: #fef9e7;
+  
+  /* Text Colors */
+  --text-dark: #1f2937;
+  --text-body: #4b5563;
+  --text-muted: #6b7280;
+  --text-light: #ffffff;
+  
+  /* Background Colors */
+  --bg-main: #ffffff;
+  --bg-alt: #f8fbf9;
+  --bg-card: #ffffff;
+  --bg-overlay: rgba(11, 25, 20, 0.75);
+  
+  /* Border & Shadows */
+  --border-color: #e5e7eb;
+  --border-light: #f3f4f6;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+  --shadow-hover: 0 15px 35px rgba(11, 122, 83, 0.15);
+  
+  /* Layout & Sizing */
+  --container-width: 1320px;
+  --header-height: 90px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  
+  /* Typography */
+  --font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Z-Index Hierarchy */
+  --z-negative: -1;
+  --z-normal: 1;
+  --z-dropdown: 100;
+  --z-sticky: 500;
+  --z-header: 1000;
+  --z-modal: 2000;
+}

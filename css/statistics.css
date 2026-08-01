@@ -1,0 +1,107 @@
+/* ==========================================================================
+   University Statistics Section Component
+   ========================================================================= */
+
+.statistics {
+  position: relative;
+  padding: 90px 0;
+  background: linear-gradient(135deg, #094730 0%, #0d6846 50%, #053322 100%);
+  color: var(--text-light);
+  overflow: hidden;
+}
+
+.statistics::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+.statistics .section-header .section-tag {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #a7f3d0;
+}
+
+.statistics .section-header h2 {
+  color: var(--text-light);
+}
+
+.statistics .section-header p {
+  color: #cbd5e1;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.07);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  padding: 35px 25px;
+  text-align: center;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.stat-icon {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: rgba(197, 155, 39, 0.2);
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text-light);
+  line-height: 1;
+  margin-bottom: 10px;
+  font-family: 'Tajawal', sans-serif;
+}
+
+.stat-title {
+  font-size: 1.1rem;
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+/* Responsive Statistics */
+@media (max-width: 992px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

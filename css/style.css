@@ -1,0 +1,142 @@
+/* ==========================================================================
+   University of Bisha - Main Stylesheet
+   ========================================================================== */
+
+/* 1. Imports */
+@import url("variables.css");
+@import url("reset.css");
+@import url("header.css");
+@import url("hero.css");
+@import url("events.css");
+@import url("news.css");
+@import url("statistics.css");
+@import url("footer.css");
+
+/* 2. Global Utilities & Layout Components */
+.container {
+  width: 90%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+/* Section Header Component */
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+.section-header .section-tag {
+  display: inline-block;
+  color: var(--primary);
+  background-color: var(--primary-light);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.section-header h2 {
+  font-size: 2.3rem;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.section-header p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* Button Components */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 28px;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: var(--transition-normal);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--text-light);
+  box-shadow: 0 4px 15px rgba(11, 122, 83, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: var(--text-light);
+  transform: translateY(-2px);
+}
+
+.btn-gold {
+  background-color: var(--accent-gold);
+  color: var(--text-light);
+  box-shadow: 0 4px 15px rgba(197, 155, 39, 0.3);
+}
+
+.btn-gold:hover {
+  background-color: #b08920;
+  transform: translateY(-2px);
+}
+
+/* Badge Utility */
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Back-to-top button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-normal);
+  z-index: var(--z-sticky);
+}
+
+.back-to-top.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-3px);
+}

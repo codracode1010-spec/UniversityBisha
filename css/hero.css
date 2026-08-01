@@ -1,0 +1,172 @@
+/* ==========================================================================
+   Hero Section Component
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  min-height: 85vh;
+  background-image: url(../images/hero.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 0 140px;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(8, 60, 40, 0.88) 0%,
+    rgba(11, 25, 20, 0.75) 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  max-width: 750px;
+  color: var(--text-light);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #a7f3d0;
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--text-light);
+  margin-bottom: 22px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #e2e8f0;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.hero-btn i {
+  transition: transform var(--transition-normal);
+}
+
+.hero-btn:hover i {
+  transform: translateX(-6px);
+}
+
+/* Quick Access / Portal Cards Floating Bar */
+.quick-access-section {
+  position: relative;
+  margin-top: -70px;
+  z-index: 10;
+}
+
+.quick-access-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.quick-card {
+  background-color: var(--bg-main);
+  padding: 25px 20px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  transition: var(--transition-normal);
+  border: 1px solid var(--border-light);
+}
+
+.quick-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--primary-light);
+}
+
+.quick-card-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: var(--radius-sm);
+  background-color: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  transition: var(--transition-normal);
+}
+
+.quick-card:hover .quick-card-icon {
+  background-color: var(--primary);
+  color: var(--text-light);
+}
+
+.quick-card-info h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.quick-card-info p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .quick-access-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 70vh;
+    padding: 60px 0 100px;
+  }
+  .hero-content h1 {
+    font-size: 2.3rem;
+  }
+  .hero-content p {
+    font-size: 1.05rem;
+  }
+  .quick-access-grid {
+    grid-template-columns: 1fr;
+  }
+}
